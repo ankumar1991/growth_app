@@ -28,6 +28,15 @@ class HomeController extends BaseController
 
     }
 
+    public function getUserDetail()
+    {
+        return View::make('user_details');
+    }
+
+    public function getUsersList()
+    {
+        return View::make('users_list');
+    }
 
     public function getUserInfo()
     {
@@ -90,7 +99,6 @@ class HomeController extends BaseController
 
 
     }
-
 
     public function getThankYou()
     {
