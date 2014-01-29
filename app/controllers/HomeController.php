@@ -25,17 +25,48 @@ class HomeController extends BaseController
 
     public function getIndex()
     {
+        try {
+
+            $users = $this->user->getUsers(1, null, 2);
+            $data['users'] = $users->count() != 0 ? $users : null;
+
+            return View::make("home", $data);
+
+
+        } catch (Exception $ex) {
+            Log::error($ex);
+            throw $ex;
+        }
 
     }
 
-    public function getUserDetail()
+    public function getUserDetail($user_id)
     {
-        return View::make('user_details');
+        try {
+
+            $data['user'] = $this->user->getUser($user_id, null, null);
+            return View::make('user_details', $data);
+
+        } catch (Exception $ex) {
+            Log::error($ex);
+            throw $ex;
+        }
+
     }
 
     public function getUsersList()
     {
-        return View::make('users_list');
+        try {
+
+            $users = $this->user->getUsers(1, null, null);
+            $data['users'] = $users->count() != 0 ? $users : null;
+            return View::make('users_list', $data);
+
+        } catch (Exception $ex) {
+            Log::error($ex);
+            throw $ex;
+        }
+
     }
 
     public function getUserInfo()
@@ -52,6 +83,7 @@ class HomeController extends BaseController
             $rules = array(
                 'name' => 'required',
                 'email' => 'required|email',
+                'phone' => 'numeric',
                 'story' => 'required',
                 'current_image' => 'required|mimes:jpeg,jpg,png',
                 'old_image' => 'required|mimes:jpeg,jpg,png'
@@ -66,6 +98,14 @@ class HomeController extends BaseController
                 $story = Input::get('story');
                 $current_image = Input::file('current_image');
                 $old_image = Input::file('old_image');
+
+                $user_phone = $this->user->getUser(null, $phone, null);
+                $user_email = $this->user->getUser(null, null, $email);
+
+                //if user exist redirect
+                if (!is_null($user_phone) || !is_null($user_email)) {
+                    return Redirect::to('home/fail');
+                }
 
                 $user = $this->user->createUser($name, $email, $phone, $story);
                 $user_id = $user->id;
@@ -85,6 +125,13 @@ class HomeController extends BaseController
                 }
 
 
+                $data = array(
+                    'name' => $name,
+                    'email' => $email,
+                    'phone' => $phone,
+                    'story' => $story
+                );
+                AppUtil::sendNotificationEmail($data);
                 return Redirect::to('home/thank-you');
 
             } else {
@@ -105,4 +152,8 @@ class HomeController extends BaseController
         return View::make('thank_you');
     }
 
+    public function getFail()
+    {
+        return View::make('fail');
+    }
 }

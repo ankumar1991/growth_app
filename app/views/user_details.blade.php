@@ -1,7 +1,22 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: anuj
- * Date: 1/28/14
- * Time: 7:17 PM
- */ 
+@extends('layouts.default')
+
+@section('content')
+
+@if(!is_null($user))
+
+Name: {{$user->name}}
+
+
+@if($user->images->count()!=0)
+
+<?php $images = $user->images; ?>
+@foreach($images as $image)
+<img src="{{asset($image->path)}}" alt="" width="500"/>
+@endforeach
+
+@endif
+
+@endif
+
+@stop
+

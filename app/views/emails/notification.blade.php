@@ -7,10 +7,10 @@
 
 <h3>User Details:</h3>
 
-<b>Name: </b>
-<b>Email: </b>
-<b>Mobile: </b>
-<b>Story: </b>
+<b>Name:   </b> {{$name}}   <br/>
+<b>Email:  </b> {{$email}} <br/>
+<b>Mobile: </b> {{$phone}} <br/>
+<b>Story:  </b> {{$story}}  <br/>
 
 
 </body>

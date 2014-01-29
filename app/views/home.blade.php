@@ -1,7 +1,19 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: anuj
- * Date: 1/28/14
- * Time: 7:14 PM
- */ 
+@extends('layouts.default')
+
+@section('content')
+
+
+@if(!is_null($users))
+
+
+@foreach($users as $user)
+
+Name: {{$user->name}} <br/>
+
+@endforeach
+
+
+@endif
+
+
+@stop

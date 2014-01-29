@@ -34,7 +34,7 @@
 <body>
 
 <?php
-$login_error = Session::get('login_error');
+$login_error = Session::get('login_errors');
 ?>
 
 <div class="container">

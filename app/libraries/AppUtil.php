@@ -49,14 +49,15 @@ class AppUtil
         }
     }
 
-    public function sendNotificationEmail($data)
+    public static function sendNotificationEmail($data)
     {
-        Mail::send('emails.welcome', $data, function ($message) {
+        Mail::send('emails.notification', $data, function ($message) {
 
-            $message->from('test@test.com');
+            $message->from(Constants::FROM_EMAIL);
             $message->to('ankumar@greenapplesolutions.com')->subject("A new user has registered in Bilt Contest.");
 
         });
     }
 
-} 
+
+}

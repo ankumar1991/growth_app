@@ -16,3 +16,4 @@ Route::get('/', 'HomeController@getIndex');
 Route::controller('dashboard', 'DashboardController');
 Route::controller('home', 'HomeController');
 Route::controller('admin', 'AdminController');
+Route::controller('test', 'TestController');

@@ -30,11 +30,11 @@ class User extends Eloquent
         }
     }
 
-    public function getUsers($active, $paginate)
+    public function getUsers($active, $paginate, $limit)
     {
         try {
 
-            $query = User::query();
+            $query = User::with('images');
 
             if (AppUtil::checkDbNotNullValue($active)) {
                 $query->where("is_active", '=', $active);
@@ -47,6 +47,10 @@ class User extends Eloquent
                 return $query->paginate($paginate);
             }
 
+            if (!is_null($limit)) {
+                return $query->limit($limit)->get();
+            }
+
             return $query->get();
 
         } catch (Exception $ex) {
@@ -55,11 +59,34 @@ class User extends Eloquent
         }
     }
 
-    public function getUser($id)
+    public function getUser($id, $phone, $email)
     {
         try {
 
-            return User::with('images')->where('id', '=', $id)->first();
+            $query = User::with('images');
+            if (AppUtil::checkDbNotNullValue($id)) {
+                $query->where('id', '=', $id);
+
+            } elseif (AppUtil::checkDbNullValue($id)) {
+                $query->whereNull('id', '=', $id);
+            }
+
+            if (AppUtil::checkDbNotNullValue($phone)) {
+                $query->where('phone', '=', $phone);
+
+            } elseif (AppUtil::checkDbNullValue($phone)) {
+                $query->whereNull('phone', '=', $phone);
+            }
+
+            if (AppUtil::checkDbNotNullValue($email)) {
+                $query->where('email', '=', $email);
+
+            } elseif (AppUtil::checkDbNullValue($email)) {
+                $query->whereNull('email', '=', $email);
+            }
+
+            $user = $query->first();
+            return isset($user) ? $user : null;
 
         } catch (Exception $ex) {
             Log::error($ex);

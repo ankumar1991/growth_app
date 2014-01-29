@@ -19,7 +19,7 @@ class DashboardController extends BaseController
 
     public function getIndex()
     {
-        $users = $this->user->getUsers(null, 10);
+        $users = $this->user->getUsers(null, 10, null);
         $data['users'] = AppUtil::returnResults($users);
 
         return View::make('admin.dashboard', $data);
@@ -28,7 +28,7 @@ class DashboardController extends BaseController
     public function getDownloadCsv()
     {
 
-        $users = $this->user->getUsers(null, null);
+        $users = $this->user->getUsers(null, null, null);
 
         $header = "Name,Email,Mobile,Story,Created At\r\n";
         $string = "";
@@ -67,7 +67,7 @@ class DashboardController extends BaseController
 
     public function getEdit($user_id)
     {
-        $data['user'] = $this->user->getUser($user_id);
+        $data['user'] = $this->user->getUser($user_id, null, null);
         $data['current_image'] = $this->image->getCurrentImage($user_id);
         $data['old_image'] = $this->image->getOldImage($user_id);
         return View::make('admin.edit', $data);
