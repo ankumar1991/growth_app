@@ -1,0 +1,129 @@
+/*-------------------------------
+	Slider
+ ------------------------------*/
+.product_slider_wrap {
+	position : relative;
+}
+
+.product_slider_overlay {
+	position   : absolute;
+	width      : 100%;
+	height     : 100%;
+	left       : 0;
+	top        : 0;
+	z-index    : 5;
+	background : #FFFFFF url('../img/slider_loader.gif') center center no-repeat;
+}
+
+.product_slider_wrap .caroufredsel_wrapper {
+	z-index : 1;
+}
+
+.product_slider {
+	height   : 500px;
+	overflow : hidden;
+}
+
+.product_slider_item {
+	position : relative;
+	float    : left;
+}
+
+.product_slider_item_preview {
+	width : 50%;
+	float : left;
+}
+
+.product_slider_item_preview a,
+.product_slider_item_preview img {
+	display : block;
+}
+
+.product_slider_item_caption {
+	margin-left : 50%;
+	position    : absolute;
+	height      : 100%;
+}
+
+.product_slider_item_caption > div {
+	padding : 30px;
+}
+
+h2.product_title_stack {
+	color       : #FFFFFF;
+	font-size   : 24px;
+	margin      : 0;
+	line-height : 27px;
+}
+
+h3.product_title_stack {
+	color       : #FFFFFF;
+	font-size   : 24px;
+	margin      : 0;
+	line-height : 27px;
+}
+
+.product_slider_nav_prev,
+.product_slider_nav_next {
+    text-decoration: none;
+	width       : 30px;
+	height      : 30px;
+	position    : absolute;
+	bottom      : 30px;
+	right       : 30px;
+	display     : block;
+	line-height : 32px;
+	text-align  : center;
+	z-index     : 2;
+}
+
+.product_slider_nav_prev {
+	right : 70px;
+}
+
+.product_slider_nav_next:hover,
+.product_slider_nav_prev:hover {
+	text-decoration : none;
+}
+
+.product_slider_item {
+        overflow : hidden;
+		background-color:#e5dce1;
+    }
+
+    @media all and (max-width: 1169px) {
+    .product_slider_item_preview {
+        width : 100%;
+    }
+
+    .product_slider_item_caption {
+        width       : 100%;
+        margin-left : 0;
+        position    : relative;
+        height      : auto;
+        float       : left;
+    }
+}
+
+.product_slider_nav_prev,
+.product_slider_nav_next {
+    text-decoration: none;
+	width       : 30px;
+	height      : 30px;
+	position    : absolute;
+	bottom      : 12px;
+	right       : 12px;
+	display     : block;
+	line-height : 32px;
+	text-align  : center;
+	z-index     : 2;
+}
+
+.product_slider_nav_prev {
+	right : 50px;
+}
+
+.product_slider_nav_next:hover,
+.product_slider_nav_prev:hover {
+	text-decoration : none;
+}

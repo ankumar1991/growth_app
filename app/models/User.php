@@ -44,14 +44,14 @@ class User extends Eloquent
             }
 
             if (!is_null($paginate)) {
-                return $query->paginate($paginate);
+                return $query->orderBy('created_at', 'desc')->paginate($paginate);
             }
 
             if (!is_null($limit)) {
-                return $query->limit($limit)->get();
+                return $query->orderBy('created_at', 'desc')->limit($limit)->get();
             }
 
-            return $query->get();
+            return $query->orderBy('created_at', 'desc')->get();
 
         } catch (Exception $ex) {
             Log::error($ex);

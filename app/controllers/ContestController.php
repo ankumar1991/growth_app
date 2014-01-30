@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController
+class ContestController extends BaseController
 {
 
     /*
@@ -27,7 +27,7 @@ class HomeController extends BaseController
     {
         try {
 
-            $users = $this->user->getUsers(1, null, 2);
+            $users = $this->user->getUsers(1, null,3);
             $data['users'] = $users->count() != 0 ? $users : null;
 
             return View::make("home", $data);
@@ -45,7 +45,9 @@ class HomeController extends BaseController
         try {
 
             $data['user'] = $this->user->getUser($user_id, null, null);
-            return View::make('user_details', $data);
+            $data['current_image']=$this->image->getCurrentImage($user_id);
+            $data['old_image']=$this->image->getOldImage($user_id);
+            return View::make('user_detail', $data);
 
         } catch (Exception $ex) {
             Log::error($ex);

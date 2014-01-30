@@ -42,7 +42,7 @@ $login_error = Session::get('login_errors');
     <div class="row" style="margin-top:20px">
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
             @if(!empty($login_error))
-            <div class="alert alert-error">
+            <div class="alert alert-danger">
                 {{$login_error}}
             </div>
             @endif

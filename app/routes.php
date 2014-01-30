@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@getIndex');
+Route::get('/', 'ContestController@getIndex');
 
 Route::controller('dashboard', 'DashboardController');
-Route::controller('home', 'HomeController');
+Route::controller('contest', 'ContestController');
 Route::controller('admin', 'AdminController');
 Route::controller('test', 'TestController');

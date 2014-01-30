@@ -1,0 +1,11 @@
+@media (min-width: 319px) and (max-width: 1024px) {
+  .span_3_width {
+   width:100% !important;
+  }
+}
+
+@media (min-width: 1025px) {
+.span_3_width {
+   width:25.641026% !important;
+  }
+}

@@ -9,7 +9,6 @@
 class TestController extends BaseController
 {
 
-
     function getSend()
     {
         $data = array(
@@ -21,6 +20,5 @@ class TestController extends BaseController
 
         AppUtil::sendNotificationEmail($data);
     }
-
 
 } 

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="../../public/css/bilt_site.css"/>
+
+    <link rel="stylesheet"
+          href="http://metcreative.com/demo/wp_shocoon/wp-content/themes/shocoon/css/font-awesome.min.css?ver=3.8.1"/>
+
+    <!--google map-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <!--<script type="text/javascript" src="../../public/js/jquery.ui.map.js"></script>-->
+
+
+    <style type="text/css">
+        .half_width {
+            width: 49% !important;
+        }
+
+        .pull_left {
+            float: left;
+        }
+
+        .pull_right {
+            float: right;
+        }
+
+        #map_canvas {
+            width: 683px;
+            height: 621px;
+        }
+
+        .enquiry_select {
+            border: none;
+            background-color: #73767d;
+            box-shadow: none;
+            padding: 0 10px;
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            display: block;
+            color: #a5a9a9;
+            border-radius: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -khtml-box-sizing: border-box;
+            resize: none;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-7">
+            <!--<iframe width="683" height="621" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"-->
+                    <!--src="https://maps.google.co.in/maps?q=Ballarpur+Industries+Ltd.+First+India+Place,+Tower+C,&amp;ie=UTF8&amp;hl=en&amp;hq=Ballarpur+Industries+Ltd.+First+India+Place,+Tower+C,&amp;hnear=Mehrauli+Gurgaon+Rd,+Gurgaon,+Haryana&amp;ll=28.46385,77.017838&amp;spn=0.223571,0.363579&amp;t=m&amp;z=12&amp;iwloc=A&amp;cid=13307446332821761388&amp;output=embed"></iframe>-->
+            <!--<br/>-->
+            <!--<small><a-->
+                    <!--href="https://maps.google.co.in/maps?q=Ballarpur+Industries+Ltd.+First+India+Place,+Tower+C,&amp;ie=UTF8&amp;hl=en&amp;hq=Ballarpur+Industries+Ltd.+First+India+Place,+Tower+C,&amp;hnear=Mehrauli+Gurgaon+Rd,+Gurgaon,+Haryana&amp;ll=28.46385,77.017838&amp;spn=0.223571,0.363579&amp;t=m&amp;z=12&amp;iwloc=A&amp;cid=13307446332821761388&amp;source=embed"-->
+                    <!--style="color:#0000FF;text-align:left">View Larger Map</a></small>-->
+        </div>
+
+
+        <div class="col-lg-5">
+
+            <div class="met_google_maps_52e8f1e7962af_met_contact_map_box met_contact_map_box met_bgcolor3 met_color2">
+
+
+                <div class="met_contact_form">
+                    <h3 class="met_bold_one met_color">CONTACT US</h3>
+
+                    <div class="wpcf7" id="wpcf7-f4-p74-o1">
+                        <form action="" method="post" class="wpcf7-form"
+                              novalidate="novalidate">
+
+                            <p><span class="wpcf7-form-control-wrap woocommerce-ordering">
+
+
+                                <!--<input type="text" name="enquiry_type" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"-->
+                                <!--placeholder="Enquiry Type">-->
+
+                                    <select name="enquiry" class="enquiry_select style_select">
+                                        <option value="menu_order">Default sorting</option>
+                                        <option value="rating">Sort by average rating</option>
+                                        <option value="date">Sort by newness</option>
+                                        <option value="price">Sort by price: low to high</option>
+                                        <option value="price-desc">Sort by price: high to low</option>
+                                    </select>
+
+                            </span><br>
+                                <span class="wpcf7-form-control-wrap "><input type="text" name="name"
+                                                                              size="40"
+                                                                              class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required wpcf7-validates-as-email"
+
+                                                                              placeholder="* Name"></span><br>
+
+                                 <span class="wpcf7-form-control-wrap "><input type="text" name="company"
+                                                                               size="40"
+                                                                               class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-email"
+
+                                                                               placeholder="* Company Name"></span><br>
+
+                                 <span class="wpcf7-form-control-wrap "><input type="text" name="email"
+                                                                               size="40"
+                                                                               class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-email"
+
+                                                                               placeholder="* Email"></span><br>
+
+
+                                <span class="wpcf7-form-control-wrap  "><input type="text" name="phone"
+
+                                                                               size="20"
+                                                                               class="pull_left wpcf7-form-control half_width wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+
+                                                                               placeholder="* Phone">
+                                </span>
+
+                                <span class="wpcf7-form-control-wrap "><input type="text" name="city"
+                                                                              size="40"
+                                                                              class="pull_right wpcf7-form-control half_width wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+
+                                                                              placeholder="* City"></span><br/><br/><br/>
+
+                                <span class="wpcf7-form-control-wrap "><input type="text" name="state"
+                                                                              size="40"
+                                                                              class="pull_left wpcf7-form-control half_width wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+
+                                                                              placeholder="* State"></span>
+
+                                <span class="wpcf7-form-control-wrap  "><input type="text" name="pincode"
+                                                                               size="40"
+                                                                               class="pull_right wpcf7-form-control half_width wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+
+                                                                               placeholder="* Pincode"></span><br><br/><br/>
+
+
+                            </p>
+
+                            <p><input type="submit" value="Send"
+                                      class="wpcf7-form-control wpcf7-submit met_bgcolor met_color2"><img
+                                    class="ajax-loader"
+                                    src="http://metcreative.com/demo/wp_shocoon/wp-content/plugins/contact-form-7/images/ajax-loader.gif"
+                                    alt="Sending ..." style="visibility: hidden;"></p>
+
+                            <div class="wpcf7-response-output wpcf7-display-none"></div>
+
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="met_contact_info">
+                    <h3 class="met_bold_one met_color">REACH OUT</h3>
+                    <i class="icon-phone"></i>&nbsp;&nbsp; <span>Phone No.</span>: 0124 2804 242/43<br>
+                    <i class="icon-envelope"></i>&nbsp;&nbsp; <span>E-Mail</span>: corpcom@bilt.com<br>
+                    <i class="icon-map-marker"></i>&nbsp;&nbsp; <span>Address</span>: Ballarpur Industries Ltd.
+                    First India Place, Tower C, Mehrauli,
+                    Gurgaon Road, Gurgaon
+                    Haryana - 122002, India
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
