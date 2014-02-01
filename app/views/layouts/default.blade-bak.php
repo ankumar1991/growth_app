@@ -3,7 +3,12 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>Bilt Matrix</title>
-   
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="http://metcreative.com/demo/wp_shocoon/xmlrpc.php"/>
+    <link rel="alternate" type="application/rss+xml" title="MetCreative | Shocoon &raquo; Feed"
+          href="http://metcreative.com/demo/wp_shocoon/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="MetCreative | Shocoon &raquo; Comments Feed"
+          href="http://metcreative.com/demo/wp_shocoon/comments/feed/"/>
 
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
 
@@ -31,7 +36,15 @@
     {{HTML::script("wp-content/themes/shocoon/js/superfish.js")}}
     {{HTML::script("wp-content/themes/shocoon/js/mobile_detector.js")}}
     {{HTML::script("wp-content/themes/shocoon/js/imagesLoaded.js")}}
-   
+    <link rel="EditURI" type="application/rsd+xml" title="RSD"
+          href="http://metcreative.com/demo/wp_shocoon/xmlrpc.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+          href="http://metcreative.com/demo/wp_shocoon/wp-includes/wlwmanifest.xml"/>
+    <link rel='prev' title='Headers' href='http://metcreative.com/demo/wp_shocoon/features/headers/'/>
+    <link rel='next' title='Features' href='http://metcreative.com/demo/wp_shocoon/features/'/>
+    <meta name="generator" content="WordPress 3.8"/>
+    <link rel='canonical' href='http://metcreative.com/demo/wp_shocoon/'/>
+    <link rel='shortlink' href='http://metcreative.com/demo/wp_shocoon/?p=51'/>
 
     <!--Tab Slider css &amp; js-->
     {{HTML::style("wp-content/tab-slider/styles/jquery.sliderTabs.css")}}
@@ -40,8 +53,8 @@
 
     <!--    facebook-->
     <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
-	<meta property="fb:admins" content="534000562"/>
-	@yield('meta')
+
+
     <!-- WooCommerce Version -->
     <meta name="generator" content="WooCommerce 2.0.20"/>
     <style type="text/css">
@@ -117,9 +130,9 @@
             }
         }
 
-        /*.met_menu_home {*/
-        /*padding: 18px !important;*/
-        /*}*/
+        .met_menu_home {
+            padding: 18px !important;
+        }
 
         /* placeholder all */
         ::-webkit-input-placeholder {
@@ -165,11 +178,12 @@
 <div id="fb-root"></div>
 
 <div class="met_page_wrapper  "><!-- #BeginLibraryItem "/Library/menu.lbi" -->
-<div class="met_page_wrapper  "><!-- #BeginLibraryItem "/Library/menu.lbi" -->
     <header class="met_content">
         <div class="row-fluid">
-            <div class="span12"><a href="{{$site_url}}" class="met_logo met_logo_loading"><img
-                        src="{{asset('wp-content/logo/logo.png')}}" data-retina="#" height="44" alt="" style=""/></a>
+            <div class="span12"><a href="#" class="met_logo met_logo_loading"><img
+                        src="<?php echo asset('wp-content/logo/logo.png'); ?>"
+                        data-retina="#" height="44"
+                        alt="MetCreative | Shocoon"/></a>
                 <aside class="clearfix">
                     <nav>
                         <ul>
@@ -183,39 +197,40 @@
                 <div id="dl-menu" class="dl-menuwrapper">
                     <button class="met_bgcolor met_bgcolor_transition2">MENU</button>
                     <ul>
-                        <li><a href="{{$site_url}}" class="met_menu_home"><i class="icon-home"></i></a></li>
-                        <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Products</a>
+                        <li><a href="{{$site_url}}" class="met_menu_home"><i class="icon-home"></i></a>
+                        </li>
+                        <li><a href="{{$site_url.'/product-page.html'}}" target="" class="met_icon_menu"><i
+                                    class="icon-book"></i> Products</a>
                             <ul class="dl-submenu">
-                                <li><a href="{{$site_url.'/premium-notebook.html'}}">Premium Notebooks</a></li>
-                                <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp; Leather Folders</a></li>
-                                <li><a href="{{$site_url.'/organiser-year-book.html'}}">Organisers &amp; Year Books</a></li>
-                                <li><a href="{{$site_url.'/youth-series.html'}}">Youth Series</a></li>
-                                <li><a href="{{$site_url.'/junior-series.html'}}">Junior Notebooks</a></li>
-                                <li><a href="{{$site_url.'/premium-pencils.html'}}">Premium Pencils</a></li>
+                                <li><a href="{{$site_url.'/product-page.html'}}">Premimum Notebooks</a></li>
+                                <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp;
+                                        Leather Folders</a></li>
+                                <li><a href="{{$site_url.'/organiser-year-book.html'}}">Organisers &amp; Year
+                                        Books</a></li>
+                                <li><a href="{{$site_url.'/youth-series.html'}}">Matrix Youth Series</a></li>
+                                <li><a href="{{$site_url.'/junior-series.html'}}">Matrix Junior Notebooks</a>
+                                </li>
+                                <li><a href="{{$site_url.'/about.html'}}premium-pencils.html">Premium Pencils</a></li>
                                 <li><a href="{{$site_url.'/copier-paper.html'}}">Copier Paper</a></li>
-                                <li><a href="{{$site_url.'/value-added-paper.html'}}">Value Added Paper</a></li>
+                                <li><a href="{{$site_url.'/value-added-paper.html'}}">Value Added Paper</a>
+                                </li>
 
                             </ul>
                         </li>
-                        <li><a href="{{URL::to('contest')}}" target="" class="met_icon_menu"><i class="icon-trophy"></i>
-                                Contest</a></li>
-                        <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i class="icon-picture"></i>
-                                Gallery</a></li>
+                        <li><a href="#" target="" class="met_icon_menu"><i class="icon-trophy"></i> Contest</a></li>
+                        <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i
+                                    class="icon-picture"></i> Gallery</a></li>
 
                         <li><a href="{{$site_url.'/etailers.html'}}" target="" class="met_icon_menu"><i
-                                    class="icon-shopping-cart"></i> eTailers</a></li>
-
-                        <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i class="icon-calendar"></i> Events</a>
+                                    class="icon-shopping-cart"></i> eTailers</a>
                         </li>
 
-                        <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Downloads</a>
-                            <ul class="dl-submenu">
-                                <li><a href="#">Catalogue</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i
+                                    class="icon-calendar"></i> Events</a></li>
 
 
-                        <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i class="icon-phone"></i>
+                        <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i
+                                    class="icon-phone"></i>
                                 Contact</a></li>
                     </ul>
                 </div>
@@ -228,41 +243,40 @@
     <nav class="met_content met_main_nav met_bgcolor3 clearfix" data-fixed="1">
 
         <ul>
-            <li><a href="{{$site_url}}" class="met_menu_home" style="padding-top: 13px;padding-bottom: 14px"><i
-                        class="icon-home"></i></a></li>
-            <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Products</a>
+            <li><a href="{{$site_url}}" class="met_menu_home"><i class="icon-home"></i></a></li>
+            <li><a href="{{$site_url.'/product-page.html'}}" target="" class="met_icon_menu"><i class="icon-book"></i>
+                    Products</a>
                 <ul class="dl-submenu">
-                    <li><a href="{{$site_url.'/premium-notebook.html'}}">Premium Notebooks</a></li>
-                    <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp; Leather Folders</a></li>
-                    <li><a href="{{$site_url.'/organiser-year-book.html'}}">Organisers &amp; Year Books</a></li>
-                    <li><a href="{{$site_url.'/youth-series.html'}}">Youth Series</a></li>
-                    <li><a href="{{$site_url.'/junior-series.html'}}">Junior Notebooks</a></li>
+                    <li><a href="{{$site_url.'/product-page.html'}}">Premimum Notebooks</a></li>
+                    <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp; Leather
+                            Folders</a></li>
+                    <li><a href="{{$site_url.'/organiser-year-book.html'}}">Organisers &amp; Year Books</a>
+                    </li>
+                    <li><a href="{{$site_url.'/youth-series.html'}}">Matrix Youth Series</a></li>
+                    <li><a href="{{$site_url.'/junior-series.html'}}">Matrix Junior Notebooks</a></li>
                     <li><a href="{{$site_url.'/premium-pencils.html'}}">Premium Pencils</a></li>
                     <li><a href="{{$site_url.'/copier-paper.html'}}">Copier Paper</a></li>
                     <li><a href="{{$site_url.'/value-added-paper.html'}}">Value Added Paper</a></li>
 
                 </ul>
             </li>
-            <li><a href="{{URL::to('contest')}}" target="" class="met_icon_menu"><i class="icon-trophy"></i> Contest</a></li>
-            <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i class="icon-picture"></i> Gallery</a></li>
+            <li><a href="http://www.bilt-matrix.com/" target="" class="met_icon_menu"><i class="icon-trophy"></i>
+                    Contest</a></li>
+            <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i
+                        class="icon-picture"></i> Gallery</a></li>
 
-            <li><a href="{{$site_url.'/etailers.html'}}" target="" class="met_icon_menu"><i class="icon-shopping-cart"></i> eTailers</a>
-            </li>
+            <li><a href="{{$site_url.'/etailers.html'}}" target="" class="met_icon_menu"><i
+                        class="icon-shopping-cart"></i> eTailers</a></li>
 
-            <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i class="icon-calendar"></i> Events</a></li>
+            <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i
+                        class="icon-calendar"></i> Events</a></li>
 
-            <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Downloads</a>
-                <ul class="dl-submenu">
-                    <li><a href="#">Catalogue</a></li>
-                </ul>
-            </li>
 
-            <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i class="icon-phone"></i> Contact</a></li>
+            <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i
+                        class="icon-phone"></i> Contact</a></li>
         </ul>
         <div class="pull-right met_bgcolor envelope-header envelop-link">
-            <a class="envelop-link-a" href="mailto:retail@bilt.com"
-               style="padding-top: 14px!important;padding-bottom: 15px !important;"><i class="icon-envelope icon-2x"
-                                                                                       style="font-size:22px;"></i></a>
+            <a class="envelop-link-a" href="mailto:retail@bilt.com"><i class="icon-envelope icon-2x" style="font-size:22px;"></i></a>
         </div>
     </nav>
 
@@ -293,7 +307,7 @@
                 </div>
                 <div class="span8">
                     <ul class="met_footer_menu">
-                        <li><a class="met_color2" href="{{$site_url.'/'}}" target="">Home</a></li>
+                        <li><a class="met_color2" href="{{$site_url}}" target="">Home</a></li>
                         <li><a class="met_color2" href="{{$site_url.'/about.html'}}" target="">About Us</a>
                         </li>
                         <li><a class="met_color2" href="#" target="">Contest</a></li>

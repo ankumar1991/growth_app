@@ -15,5 +15,8 @@ Route::get('/', 'ContestController@getIndex');
 
 Route::controller('dashboard', 'DashboardController');
 Route::controller('contest', 'ContestController');
+Route::get('contest-fb', 'ContestController@getHomeFb');
+
 Route::controller('admin', 'AdminController');
+Route::controller('contact', 'ContactController');
 Route::controller('test', 'TestController');

@@ -54,7 +54,17 @@ class AppUtil
         Mail::send('emails.notification', $data, function ($message) {
 
             $message->from(Constants::FROM_EMAIL);
-            $message->to('ankumar@greenapplesolutions.com')->subject("A new user has registered in Bilt Contest.");
+            $message->to('social@bilt.com')->subject("A new user has registered in Bilt Contest.");
+
+        });
+    }
+
+    public static function sendContactNotificationEmail($data)
+    {
+        Mail::send('emails.contact', $data, function ($message) {
+
+            $message->from(Constants::FROM_EMAIL);
+            $message->to('social@bilt.com')->subject("A new entry has been made on Bilt Website");
 
         });
     }
