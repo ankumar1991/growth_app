@@ -3,7 +3,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>Bilt Matrix</title>
-   
+
 
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
 
@@ -31,7 +31,7 @@
     {{HTML::script("wp-content/themes/shocoon/js/superfish.js")}}
     {{HTML::script("wp-content/themes/shocoon/js/mobile_detector.js")}}
     {{HTML::script("wp-content/themes/shocoon/js/imagesLoaded.js")}}
-   
+
 
     <!--Tab Slider css &amp; js-->
     {{HTML::style("wp-content/tab-slider/styles/jquery.sliderTabs.css")}}
@@ -40,8 +40,8 @@
 
     <!--    facebook-->
     <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
-	<meta property="fb:admins" content="534000562"/>
-	@yield('meta')
+    <meta property="fb:admins" content="534000562"/>
+    @yield('meta')
     <!-- WooCommerce Version -->
     <meta name="generator" content="WooCommerce 2.0.20"/>
     <style type="text/css">
@@ -173,7 +173,7 @@
                 <aside class="clearfix">
                     <nav>
                         <ul>
-                            <li><a href="#" target="" class="met_color_transition">Join Us on</a></li>
+                            <li><a href="#" target="" class="join_us">Join Us on</a></li>
 
                         </ul>
                     </nav>
@@ -187,8 +187,10 @@
                         <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Products</a>
                             <ul class="dl-submenu">
                                 <li><a href="{{$site_url.'/premium-notebook.html'}}">Premium Notebooks</a></li>
-                                <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp; Leather Folders</a></li>
-                                <li><a href="{{$site_url.'/organiser-year-book.html'}}">Organisers &amp; Year Books</a></li>
+                                <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp; Leather
+                                        Folders</a></li>
+                                <li><a href="{{$site_url.'/organiser-year-book.html'}}">Organisers &amp; Year Books</a>
+                                </li>
                                 <li><a href="{{$site_url.'/youth-series.html'}}">Youth Series</a></li>
                                 <li><a href="{{$site_url.'/junior-series.html'}}">Junior Notebooks</a></li>
                                 <li><a href="{{$site_url.'/premium-pencils.html'}}">Premium Pencils</a></li>
@@ -199,23 +201,27 @@
                         </li>
                         <li><a href="{{URL::to('contest')}}" target="" class="met_icon_menu"><i class="icon-trophy"></i>
                                 Contest</a></li>
-                        <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i class="icon-picture"></i>
+                        <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i
+                                    class="icon-picture"></i>
                                 Gallery</a></li>
 
                         <li><a href="{{$site_url.'/etailers.html'}}" target="" class="met_icon_menu"><i
                                     class="icon-shopping-cart"></i> eTailers</a></li>
 
-                        <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i class="icon-calendar"></i> Events</a>
+                        <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i
+                                    class="icon-calendar"></i> Events</a>
                         </li>
 
-                        <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Downloads</a>
+                        <li><a href="#" target="" class="met_icon_menu"><i class="icon-download"></i> Downloads</a>
                             <ul class="dl-submenu">
-                                <li><a href="#">Catalogue</a></li>
+                                <li><a href="http://beta.bilt-matrix.com/wp-content/Catalogue.pdf" target="_blank">Catalogue</a>
+                                </li>
                             </ul>
                         </li>
 
 
-                        <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i class="icon-phone"></i>
+                        <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i
+                                    class="icon-phone"></i>
                                 Contact</a></li>
                     </ul>
                 </div>
@@ -233,7 +239,8 @@
             <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Products</a>
                 <ul class="dl-submenu">
                     <li><a href="{{$site_url.'/premium-notebook.html'}}">Premium Notebooks</a></li>
-                    <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp; Leather Folders</a></li>
+                    <li><a href="{{$site_url.'/padfolios-leather-folder.html'}}">Padfolios &amp; Leather Folders</a>
+                    </li>
                     <li><a href="{{$site_url.'/organiser-year-book.html'}}">Organisers &amp; Year Books</a></li>
                     <li><a href="{{$site_url.'/youth-series.html'}}">Youth Series</a></li>
                     <li><a href="{{$site_url.'/junior-series.html'}}">Junior Notebooks</a></li>
@@ -243,21 +250,27 @@
 
                 </ul>
             </li>
-            <li><a href="{{URL::to('contest')}}" target="" class="met_icon_menu"><i class="icon-trophy"></i> Contest</a></li>
-            <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i class="icon-picture"></i> Gallery</a></li>
+            <li><a href="{{URL::to('contest')}}" target="" class="met_icon_menu"><i class="icon-trophy"></i> Contest</a>
+            </li>
+            <li><a href="{{$site_url.'/gallery.html'}}" target="" class="met_icon_menu"><i class="icon-picture"></i>
+                    Gallery</a></li>
 
-            <li><a href="{{$site_url.'/etailers.html'}}" target="" class="met_icon_menu"><i class="icon-shopping-cart"></i> eTailers</a>
+            <li><a href="{{$site_url.'/etailers.html'}}" target="" class="met_icon_menu"><i
+                        class="icon-shopping-cart"></i> eTailers</a>
             </li>
 
-            <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i class="icon-calendar"></i> Events</a></li>
+            <li><a href="{{$site_url.'/events.html'}}" target="" class="met_icon_menu"><i class="icon-calendar"></i>
+                    Events</a></li>
 
-            <li><a href="#" target="" class="met_icon_menu"><i class="icon-book"></i> Downloads</a>
+            <li><a href="#" target="" class="met_icon_menu"><i class="icon-download"></i> Downloads</a>
                 <ul class="dl-submenu">
-                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="http://beta.bilt-matrix.com/wp-content/Catalogue.pdf" target="_blank">Catalogue</a>
+                    </li>
                 </ul>
             </li>
 
-            <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i class="icon-phone"></i> Contact</a></li>
+            <li><a href="{{$site_url.'/contact.html'}}" target="" class="met_icon_menu"><i class="icon-phone"></i>
+                    Contact</a></li>
         </ul>
         <div class="pull-right met_bgcolor envelope-header envelop-link">
             <a class="envelop-link-a" href="mailto:retail@bilt.com"
@@ -326,7 +339,7 @@
         </div>
         <div class="met_footer_copyright clearfix">
             <div class="met_content">
-                <p class="met_color2">&copy; 2014 All rights reserved by Bilt Matrix</p>
+                <p class="met_color2">&copy; 2014 All rights reserved by Ballarpur Industries Limited.</p>
             </div>
         </div>
     </footer>

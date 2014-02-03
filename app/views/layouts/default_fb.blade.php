@@ -176,10 +176,7 @@
     @yield('content')
 
     <div class="row-fluid footer">
-        <p class="met_color2" style="padding: 6px;margin: 0">&copy; 2014 All rights reserved by <a href="{{$site_url}}"
-                                                                                                   target="_blank"
-                                                                                                   style="color: #ffffff;text-decoration: underline">Bilt
-                Matrix</a></p>
+        <p class="met_color2" style="padding: 6px;margin: 0">&copy; 2014 All rights reserved by Ballarpur Industries Limited.</p>
     </div>
 </div>
 

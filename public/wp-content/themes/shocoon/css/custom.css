@@ -5523,7 +5523,7 @@ text-align:center;
 
 .envelope-header{
 	padding: 14px;
-    color: #fff;
+color: #fff;
 }
 
 .half_width_49 {
@@ -5608,4 +5608,19 @@ text-align:center;
 }
 .envelop-link-a{
 	padding:0px 19px !important;
+}
+.padding-20{
+	padding:20px;
+}
+.min-height{
+	min-height:379px;
+}
+.margin-top6-percent{
+	margin-top:6%;
+}
+a.join_us:hover {
+text-decoration: none;
+}
+a.join_us {
+cursor: default;
 }

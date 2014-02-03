@@ -34,7 +34,11 @@ class User extends Eloquent
     {
         try {
 
-            $query = User::with('images');
+            $query = User::with(array('images' => function ($inner) {
+
+                    $inner->orderBy('status', '=', 'desc');
+
+                }));
 
             if (AppUtil::checkDbNotNullValue($active)) {
                 $query->where("is_active", '=', $active);
@@ -63,7 +67,11 @@ class User extends Eloquent
     {
         try {
 
-            $query = User::with('images');
+            $query = User::with(array('images' => function ($inner) {
+
+                    $inner->orderBy('status', '=', 'desc');
+
+                }));
             if (AppUtil::checkDbNotNullValue($id)) {
                 $query->where('id', '=', $id);
 

@@ -64,9 +64,11 @@
         font-size: 16px;
         cursor: pointer;
     }
-    .terms_p .error{
+
+    .terms_p .error {
         display: inline-block;
     }
+
 
 
 </style>
@@ -94,10 +96,48 @@
 </script>
 
 
+<!--[if IE ]>
+<script type="text/javascript">
+
+    $(function () {
+        var input = document.createElement("input");
+        if (('placeholder' in input) == false) {
+            $('[placeholder]').focus(function () {
+                var i = $(this);
+                if (i.val() == i.attr('placeholder')) {
+                    i.val('').removeClass('placeholder');
+                    if (i.hasClass('password')) {
+                        i.removeClass('password');
+                        this.type = 'password';
+                    }
+                }
+            }).blur(function () {
+                    var i = $(this);
+                    if (i.val() == '' || i.val() == i.attr('placeholder')) {
+                        if (this.type == 'password') {
+                            i.addClass('password');
+                            this.type = 'text';
+                        }
+                        i.addClass('placeholder').val(i.attr('placeholder'));
+                    }
+                }).blur().parents('form').submit(function () {
+                    $(this).find('[placeholder]').each(function () {
+                        var i = $(this);
+                        if (i.val() == i.attr('placeholder'))
+                            i.val('');
+                    })
+                });
+        }
+    });
+
+</script>
+<![endif]-->
+
+
 <div class="row-fluid">
     <div class="span12"><img class="full_width" src="{{asset('wp-content/contest-banner.jpg')}}"></div>
 </div>
-<div class="row-fluid">
+<div class="row-fluid check">
     <h3>Participating in “A decade of growing together” Contest is quick and easy. Enter your valid details such as
         Name, Email id, Phone in the form given below. Share your short success story telling us about your journey and
         achievements in the past decade and upload your current and your 10 years old picture. Accept the terms and

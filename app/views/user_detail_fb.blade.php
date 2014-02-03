@@ -42,16 +42,16 @@
                 @if(!is_null($old_image))
                 <div class="span6">
                     <?php $old_image_path = $old_image->path; ?>
-                    <img src="http://placehold.it/517X580" class="full_width">
-                    <!--                    <img src="{{URL::to($old_image_path)}}" class="full_width">-->
+                    <!--                    <img src="http://placehold.it/517X580" class="full_width">-->
+                    <img src="{{URL::to($old_image_path)}}" class="full_width">
                 </div>
                 @endif
 
                 @if(!is_null($current_image))
                 <div class="span6">
                     <?php $current_image_path = $current_image->path; ?>
-                    <img src="http://placehold.it/517X580" class="full_width">
-                    <!--                    <img src="{{URL::to($current_image_path)}}" class="full_width">-->
+                    <!--                    <img src="http://placehold.it/517X580" class="full_width">-->
+                    <img src="{{URL::to($current_image_path)}}" class="full_width">
                 </div>
                 @endif
 

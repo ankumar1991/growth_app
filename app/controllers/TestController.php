@@ -21,4 +21,10 @@ class TestController extends BaseController
         AppUtil::sendNotificationEmail($data);
     }
 
+    function getImage()
+    {
+        $image = AppUtil::getCurrentImage(6);
+        dd($image);
+    }
+
 } 

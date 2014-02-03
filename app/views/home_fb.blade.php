@@ -18,7 +18,7 @@
 
 
 <div class="row-fluid">
-    <div class="span12 text-center">
+    <div class="span12 check text-center">
         <h3 class=""><p>A decade is certainly a milestone worth celebrating. In honor of completing a decade of our
                 premium notebooks, we invite you to join our 10 years of success.
                 Celebrate with BILT Matrix , share your journey of 10 years of success with us by participating in
@@ -42,31 +42,31 @@
         <div class="span6 bottom-events padding-10">
             <div class="row-fluid ">
 
-                <?php $images = $user->images; ?>
+                <?php $user_id = $user->id; ?>
 
-                @foreach($images as $image)
+                <?php $old_image = AppUtil::getOldImage($user_id); ?>
+                <?php $current_image = AppUtil::getCurrentImage($user_id); ?>
 
-                <?php $status = $image->status; ?>
-                @if(isset($status) && $status=="old")
+                @if(!is_null($old_image))
 
-                <?php $old_image_path = $image->path; ?>
-                <div class="span6">
-                    <img src="http://placehold.it/517X580">
-                    <!--                        <img src="{{URL::to($old_image_path)}}">-->
-                </div>
+                <?php $old_image_path = $old_image->path; ?>
 
-                @else
-
-                <?php $current_image_path = $image->path; ?>
-                <div class="span6">
-                    <img src="http://placehold.it/517X580">
-                    <!--                        <img src="{{URL::to($current_image_path)}}">-->
+                <div class="span6 old">
+                    <!--                        <img src="http://placehold.it/517X580">-->
+                    <img src="{{URL::to($old_image_path)}}">
                 </div>
 
                 @endif
 
+                @if(!is_null($current_image))
 
-                @endforeach
+                <?php $current_image_path = $current_image->path; ?>
+                <div class="span6 current">
+                    <!--                        <img src="http://placehold.it/517X580">-->
+                    <img src="{{URL::to($current_image_path)}}">
+                </div>
+
+                @endif
 
 
             </div>
@@ -74,7 +74,7 @@
                 <div class="span12">
                     <h2 class="bilt-color">{{$user->name}}</h2>
 
-                    <p>{{substr($user->story,0,200)}}...</p>
+                    <p>{{substr($user->story,0,97)}}...</p>
                 </div>
                 <a class="btn btn-danger padding-5 pull-right" href="{{URL::to('contest/user-detail-fb/'.$user->id)}}"
                    style=""> > </a>

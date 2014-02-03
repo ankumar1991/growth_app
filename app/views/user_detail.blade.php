@@ -3,10 +3,10 @@
 @section('meta')
 
 @if(!is_null($user))
-<meta property="og:title" content="Growth Story of {{$user->name}}" />
-<meta property="og:type" content="profile" />
-<meta property="og:image" content="{{URL::to($current_image->path)}}" />
-<meta property="og:description" content="{{$user->story}}" />
+<meta property="og:title" content="Growth Story of {{$user->name}}"/>
+<meta property="og:type" content="profile"/>
+<meta property="og:image" content="{{URL::to($current_image->path)}}"/>
+<meta property="og:description" content="{{$user->story}}"/>
 @endif
 
 @stop
@@ -36,18 +36,18 @@
 
 
                 @if(!is_null($old_image))
-                <div class="span6">
+                <div class="span6 old">
                     <?php $old_image_path = $old_image->path; ?>
-                    <img src="http://placehold.it/517X580" class="full_width">
-                    <!--  <img src="{{URL::to($old_image_path)}}" class="full_width">-->
+<!--                                        <img src="http://placehold.it/500X500" class="full_width">-->
+                    <img src="{{URL::to($old_image_path)}}" class="full_width">
                 </div>
                 @endif
 
                 @if(!is_null($current_image))
-                <div class="span6">
+                <div class="span6 current">
                     <?php $current_image_path = $current_image->path; ?>
-                    <img src="http://placehold.it/517X580" class="full_width">
-                    <!--   <img src="{{URL::to($current_image_path)}}" class="full_width">-->
+<!--                                        <img src="http://placehold.it/500X500" class="full_width">-->
+                    <img src="{{URL::to($current_image_path)}}" class="full_width">
                 </div>
                 @endif
 
@@ -64,7 +64,6 @@
             <div class="row-fluid">
 
 
-
                 <div class="span4">
                     <a class="twitter-share-button">Tweet</a>
                 </div>
@@ -77,8 +76,6 @@
                          data-action="like" data-show-faces="false" data-share="false" data-width="300"></div>
                 </div>
                 <!--                fb like ends here-->
-
-
 
 
             </div>

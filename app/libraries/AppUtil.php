@@ -69,5 +69,15 @@ class AppUtil
         });
     }
 
+    public static function getOldImage($user_id)
+    {
+        $image = new Image();
+        return $image->getOldImage($user_id);
+    }
 
+    public static function getCurrentImage($user_id)
+    {
+        $image = new Image();
+        return $image->getCurrentImage($user_id);
+    }
 }
